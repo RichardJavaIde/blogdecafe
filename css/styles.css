@@ -3,8 +3,9 @@
   --fuenteParrafos: "PT Sans", sans-serif;
 
   --primario: #784d3c;
+  --gris: #e1e1e1;
   --blanco: #ffffff;
-  --nagro: #000000;
+  --negro: #000000;
 }
 html {
   font-size: 62.5%; /** Esto es para que 1 REM sea iqua a 10 mpxx**/
@@ -36,6 +37,7 @@ h2,
 h3,
 h4 {
   font-family: var(--fuenteHeading);
+  line-height: 1.3;
 }
 
 h1 {
@@ -63,4 +65,144 @@ img {
 }
 .centrar-text {
   text-align: center;
+}
+
+/** Header **/
+
+.header {
+  background-image: url(../img/banner.jpg);
+  height: 60rem; /*Para mostrar la imajen*/
+  background-size: cover; /* toma todo el ancho de la pagina*/
+  background-repeat: no-repeat;
+  background-position: center center; /*para ajustar la imagen segun el tamaño de la pagina*/
+}
+
+.header__texto {
+  text-align: center;
+  color: var(--blanco);
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .header__texto {
+    margin-top: 15rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.barra {
+  padding-top: 3rem;
+}
+.logo {
+  color: var(--blanco);
+}
+.logo__nombre {
+  font-weight: 400;
+}
+.logo__blod {
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .navegacion {
+    display: flex;
+    gap: 2.5rem;
+  }
+}
+.navegacion__enlace {
+  display: block;
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--blanco);
+}
+
+/** Blog **/
+
+@media (min-width: 768px) {
+  .contenido-principal {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.entrada {
+  border-bottom: 1.5px solid var(--gris);
+  margin-bottom: 2rem;
+}
+
+.entrada:last-of-type {
+  border-bottom: none;
+}
+
+.boton {
+  display: block;
+  font-family: var(--fuenteHeading);
+  color: var(--blanco);
+  text-align: center;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    display: inline-block;
+  }
+}
+.boton--primario {
+  background-color: var(--negro);
+}
+
+/**sedebar**/
+.boton--segundario {
+  background-color: var(--primario);
+}
+.cursos {
+  list-style: none;
+}
+
+.widget-curso {
+  border-bottom: 1px solid var(--gris);
+  margin-bottom: 2rem;
+}
+.widget-curso:last-of-type {
+  border-bottom: none;
+}
+.widget-curso__label {
+  font-family: var(--fuenteHeading);
+  font-weight: bold;
+}
+.widget-curso__info {
+  font-weight: normal;
+}
+.widget-curso__label,
+.widget-curso__info {
+  font-size: 2rem;
+}
+/** Footer**/
+.footer {
+  background-image: linear-gradient(
+    to top,
+    var(--negro) 10%,
+    var(--primario) 80%
+  ); /*Este es ub degradado de abajo hacia ariba*/
+  padding-bottom: 3rem;
+}
+
+/** Nosotros **/
+
+@media (min-width: 768px) {
+  .sobre-nosotros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    margin-bottom: 3rem;
+  }
 }
